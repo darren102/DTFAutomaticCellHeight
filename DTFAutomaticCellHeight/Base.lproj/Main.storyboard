@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OUb-YN-elS">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Dynamic Height Cells-->
+        <scene sceneID="NRG-Tl-Bm9">
+            <objects>
+                <tableViewController id="5Zf-YQ-cgd" customClass="DTFAutomaticTableViewController" customModule="DTFAutomaticCellHeight" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="90o-mP-gs1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="5Zf-YQ-cgd" id="uVn-z6-uM6"/>
+                            <outlet property="delegate" destination="5Zf-YQ-cgd" id="Jdn-WM-VkM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Dynamic Height Cells" id="jAQ-K5-Hwv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HjA-cV-0Hd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1360" y="468"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GHL-Lr-JVr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OUb-YN-elS" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uCM-4n-1N7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Zf-YQ-cgd" kind="relationship" relationship="rootViewController" id="i3N-nN-75D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tnl-66-mto" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="548" y="468"/>
+        </scene>
+    </scenes>
+</document>
