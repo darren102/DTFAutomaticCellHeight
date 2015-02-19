@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95DE83361A96A23A00E18E7F /* DTFAutomaticDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE83351A96A23A00E18E7F /* DTFAutomaticDetailsViewController.swift */; };
 		95E1D00F1A95693500820679 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E1D00E1A95693500820679 /* AppDelegate.swift */; };
 		95E1D0141A95693500820679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E1D0121A95693500820679 /* Main.storyboard */; };
 		95E1D0161A95693500820679 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E1D0151A95693500820679 /* Images.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		95DE83351A96A23A00E18E7F /* DTFAutomaticDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTFAutomaticDetailsViewController.swift; sourceTree = "<group>"; };
 		95E1D0091A95693500820679 /* DTFAutomaticCellHeight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DTFAutomaticCellHeight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E1D00D1A95693500820679 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95E1D00E1A95693500820679 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,14 +86,15 @@
 			isa = PBXGroup;
 			children = (
 				95E1D00E1A95693500820679 /* AppDelegate.swift */,
-				95E1D0121A95693500820679 /* Main.storyboard */,
-				95E1D0151A95693500820679 /* Images.xcassets */,
-				95E1D0171A95693500820679 /* LaunchScreen.xib */,
-				95E1D00C1A95693500820679 /* Supporting Files */,
-				95E1D02E1A9569F000820679 /* DTFAutomaticTableViewController.swift */,
-				95E1D0301A956A3100820679 /* DTFAutomaticTableViewCell.swift */,
 				95E1D0321A956D4E00820679 /* Country.swift */,
 				95E1D0341A956F1900820679 /* CountryDatasource.swift */,
+				95DE83351A96A23A00E18E7F /* DTFAutomaticDetailsViewController.swift */,
+				95E1D0301A956A3100820679 /* DTFAutomaticTableViewCell.swift */,
+				95E1D02E1A9569F000820679 /* DTFAutomaticTableViewController.swift */,
+				95E1D0151A95693500820679 /* Images.xcassets */,
+				95E1D0171A95693500820679 /* LaunchScreen.xib */,
+				95E1D0121A95693500820679 /* Main.storyboard */,
+				95E1D00C1A95693500820679 /* Supporting Files */,
 			);
 			path = DTFAutomaticCellHeight;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				95E1D02F1A9569F000820679 /* DTFAutomaticTableViewController.swift in Sources */,
 				95E1D0351A956F1900820679 /* CountryDatasource.swift in Sources */,
 				95E1D0311A956A3100820679 /* DTFAutomaticTableViewCell.swift in Sources */,
+				95DE83361A96A23A00E18E7F /* DTFAutomaticDetailsViewController.swift in Sources */,
 				95E1D00F1A95693500820679 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +421,7 @@
 				95E1D02A1A95693500820679 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95E1D02B1A95693500820679 /* Build configuration list for PBXNativeTarget "DTFAutomaticCellHeightTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				95E1D02D1A95693500820679 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

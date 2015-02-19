@@ -18,10 +18,61 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Dynamic Height Cells" id="jAQ-K5-Hwv"/>
+                    <connections>
+                        <segue destination="aow-Gn-da1" kind="show" identifier="CountryDetails" id="k9b-1h-Xjc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HjA-cV-0Hd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1360" y="468"/>
+            <point key="canvasLocation" x="1402" y="480"/>
+        </scene>
+        <!--Automatic Details View Controller-->
+        <scene sceneID="lRM-GM-ou6">
+            <objects>
+                <viewController id="aow-Gn-da1" customClass="DTFAutomaticDetailsViewController" customModule="DTFAutomaticCellHeight" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gpi-7p-Z0J"/>
+                        <viewControllerLayoutGuide type="bottom" id="lVu-qD-Six"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dXG-rt-0pa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf2-wn-kAG">
+                                <rect key="frame" x="16" y="72" width="568" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="iLO-Uf-Mse"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdn-6m-ofk">
+                                <rect key="frame" x="16" y="122" width="568" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wdn-6m-ofk" firstAttribute="leading" secondItem="dXG-rt-0pa" secondAttribute="leading" constant="16" id="2fj-iD-2lZ"/>
+                            <constraint firstItem="Yf2-wn-kAG" firstAttribute="top" secondItem="gpi-7p-Z0J" secondAttribute="bottom" constant="8" id="3Vf-sI-DWb"/>
+                            <constraint firstAttribute="trailing" secondItem="Yf2-wn-kAG" secondAttribute="trailing" constant="16" id="GZy-qK-jEL"/>
+                            <constraint firstAttribute="trailing" secondItem="Wdn-6m-ofk" secondAttribute="trailing" constant="16" id="LbQ-Mo-BOj"/>
+                            <constraint firstItem="lVu-qD-Six" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wdn-6m-ofk" secondAttribute="bottom" constant="8" id="aws-OV-gPt"/>
+                            <constraint firstItem="Wdn-6m-ofk" firstAttribute="top" secondItem="Yf2-wn-kAG" secondAttribute="bottom" constant="10" id="kBS-FA-Rih"/>
+                            <constraint firstItem="Yf2-wn-kAG" firstAttribute="leading" secondItem="dXG-rt-0pa" secondAttribute="leading" constant="16" id="qgm-31-sek"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countryDescription" destination="Wdn-6m-ofk" id="eHg-be-4ON"/>
+                        <outlet property="countryTitle" destination="Yf2-wn-kAG" id="com-OG-oCB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d1u-0l-cFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2191" y="480"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GHL-Lr-JVr">

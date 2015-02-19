@@ -8,7 +8,13 @@
 
 import Foundation
 
-struct Country {
+class Country: NSObject {
     let countryTitle: String
     let countryDescription: String
+    
+    init(countryTitle: String, countryDescription: String) {
+        self.countryTitle = countryTitle
+        self.countryDescription = countryDescription
+        super.init()
+    }
 }
