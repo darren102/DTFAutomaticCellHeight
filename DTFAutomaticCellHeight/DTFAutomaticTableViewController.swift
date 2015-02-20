@@ -19,13 +19,13 @@ class DTFAutomaticTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Providing a rough estimate for the height of each row in the table the closer the better
-        tableView.estimatedRowHeight = 170.0
+        tableView.estimatedRowHeight = 165.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
         // Registering the UITableViewCell class so we can dequeue versions of it as needed
         tableView.registerClass(DTFAutomaticTableViewCell.self, forCellReuseIdentifier: kCellIdentifier)
     }
-
+    
     // MARK: - UITableViewDatasource instance methods (UITABLEVIEWDATASOURCE)
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries.count
