@@ -20,7 +20,7 @@ class DTFAutomaticDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Country Details"
+        title = NSLocalizedString("Country Details", comment: "")
 
         if let country = country {
             countryTitle.text = country.countryTitle
