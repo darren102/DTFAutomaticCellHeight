@@ -19,7 +19,7 @@ class DTFAutomaticTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Providing a rough estimate for the height of each row in the table the closer the better
-        tableView.estimatedRowHeight = 165.0
+        tableView.estimatedRowHeight = 166.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
         // Registering the UITableViewCell class so we can dequeue versions of it as needed
@@ -32,7 +32,7 @@ class DTFAutomaticTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as DTFAutomaticTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as! DTFAutomaticTableViewCell
         let country = countries[indexPath.row]
         cell.country = country
         return cell
@@ -48,7 +48,7 @@ class DTFAutomaticTableViewController: UITableViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier! == segueIdentifier {
-            let controller = segue.destinationViewController as DTFAutomaticDetailsViewController
+            let controller = segue.destinationViewController as! DTFAutomaticDetailsViewController
             controller.country = sender as? Country
         }
     }
