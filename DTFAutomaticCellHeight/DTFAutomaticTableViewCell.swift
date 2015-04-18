@@ -10,9 +10,22 @@ import UIKit
 
 class DTFAutomaticTableViewCell: UITableViewCell {
 
-    // MARK: - Properties
-    private let titleLabel = UILabel()
-    private let descriptionLabel = UILabel()
+    // MARK: - Variables
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.setTranslatesAutoresizingMaskIntoConstraints(false)
+        label.textAlignment = .Left
+        label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        return label
+    }()
+    private lazy var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.setTranslatesAutoresizingMaskIntoConstraints(false)
+        label.textAlignment = .Left
+        label.numberOfLines = 0
+        label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        return label
+    }()
     
     var country: Country? {
         didSet { configureCell() }
@@ -25,8 +38,8 @@ class DTFAutomaticTableViewCell: UITableViewCell {
         selectionStyle = .None
         accessoryType = .None
         
-        setupTitleLabel()
-        setupDescriptionLabel()
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(descriptionLabel)
         setupConstraints()
     }
     
@@ -34,7 +47,7 @@ class DTFAutomaticTableViewCell: UITableViewCell {
         fatalError("NSCoding not supported on DTFAutomaticTableViewCell")
     }
     
-    // MARK: - UITableViewCell-Overridden instance methods (UITABLEVIEWCELL-OVERRIDDEN)
+    // MARK: - View Life Cycle
     override func prepareForReuse() {
         super.prepareForReuse()
         titleLabel.text = nil
@@ -50,27 +63,9 @@ class DTFAutomaticTableViewCell: UITableViewCell {
         }
     }
     
-    private func setupTitleLabel() {
-        titleLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
-        titleLabel.textAlignment = .Left
-        titleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        contentView.addSubview(titleLabel)
-    }
-    
-    private func setupDescriptionLabel() {
-        descriptionLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
-        descriptionLabel.textAlignment = .Left
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        contentView.addSubview(descriptionLabel)
-    }
-    
     private func setupConstraints() {
         let viewsDictionary = ["title":titleLabel, "description":descriptionLabel]
-        let metrics = ["titleHeight" : NSNumber(float: 17.0),
-            "leadingMargin" : NSNumber(float: 15.0),
-            "trailingMargin" : NSNumber(float: 5.0),
-            "verticalSpacing" : NSNumber(float: 8.0)]
+        let metrics = ["titleHeight":17.0, "leadingMargin" : 15.0, "trailingMargin" : 5.0, "verticalSpacing" : 8.0]
         
         // Setup the title label horizontal constraints
         NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat(

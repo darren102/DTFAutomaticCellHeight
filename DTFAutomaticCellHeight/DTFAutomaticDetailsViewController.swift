@@ -10,16 +10,16 @@ import UIKit
 
 class DTFAutomaticDetailsViewController: UIViewController {
 
-    // MARK: - IBOutlets
-    @IBOutlet weak var countryTitle: UILabel!
-    @IBOutlet weak var countryDescription: UILabel!
-    
     // MARK: - Variables
     var country: Country?
-    
+
+    // MARK: - IBOutlets
+    @IBOutlet private weak var countryTitle: UILabel!
+    @IBOutlet private weak var countryDescription: UILabel!
+
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         title = NSLocalizedString("Country Details", comment: "")
 
         if let country = country {

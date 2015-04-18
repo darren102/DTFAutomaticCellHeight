@@ -10,7 +10,7 @@ import UIKit
 
 class DTFAutomaticTableViewController: UITableViewController {
 
-    // MARK: - Variables
+    // MARK: - Constants
     private let kCellIdentifier = "CellIdentifier"
     private let countries = CountryDatasource.countries()
     private let segueIdentifier = "CountryDetails"
@@ -18,11 +18,15 @@ class DTFAutomaticTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Providing a rough estimate for the height of each row in the table the closer the better
+        /**
+        * Providing a rough estimate for each rows height. The closer to accurate the better
+        */
         tableView.estimatedRowHeight = 166.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        // Registering the UITableViewCell class so we can dequeue versions of it as needed
+        /**
+        * Registering the UITableViewCell class so instances can be dequeued as needed
+        */
         tableView.registerClass(DTFAutomaticTableViewCell.self, forCellReuseIdentifier: kCellIdentifier)
     }
     
@@ -33,23 +37,24 @@ class DTFAutomaticTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier, forIndexPath: indexPath) as! DTFAutomaticTableViewCell
-        let country = countries[indexPath.row]
-        cell.country = country
+        cell.country = countries[indexPath.row]
         return cell
     }
     
-    // MARK: - UITableViewDelegate instance methods (UITABLEVIEWDELEGATE)
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let country = countries[indexPath.row]
-        performSegueWithIdentifier(segueIdentifier, sender: country)
-    }
-    
-
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier! == segueIdentifier {
             let controller = segue.destinationViewController as! DTFAutomaticDetailsViewController
             controller.country = sender as? Country
         }
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension DTFAutomaticTableViewController: UITableViewDelegate {
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let country = countries[indexPath.row]
+        performSegueWithIdentifier(segueIdentifier, sender: country)
     }
 }
